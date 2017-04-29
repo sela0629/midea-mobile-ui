@@ -1,0 +1,97 @@
+//放一些sass常用函數
+//习惯函数使用驼峰命名方法
+//画线 默认是上边线
+@mixin setLine($color,$direction:'top'){
+	content: " ";
+	position: absolute;
+
+	@if $direction == 'top' {
+	left: 0;
+	top: 0;
+	right: 0;
+	height: 1px;
+	border-top: 1px solid $color;
+	color: $color;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transform: scaleY(0.5);
+	transform: scaleY(0.5);
+}@else{
+	right: 0;
+    top: 0;
+    width: 1px;
+    bottom: 0;
+	border-right: 1px solid $color;
+	color: $color;
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+}
+	
+}
+
+//横竖折角(7) 用于列表返回图标和access标（>）(6px, #C8C8CD, 2px);
+@mixin setArrow($width,$color,$borderWidth){
+	display: inline-block;
+	height: $width;
+	width: $width;
+	border-width: $borderWidth $borderWidth 0 0;
+	border-color: $color;
+	border-style: solid;
+	//旋转 46deg 
+	// -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+	// transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+	//默认位置 垂直居中
+	position: relative;
+	top: -2px;
+}
+
+//a 标签高亮处理
+@mixin setTapColor(){
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+//超出... 
+//超出一行...
+@mixin textOneLine(){
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow:ellipsis;
+}
+//超出两行...
+@mixin textTwoLine(){
+	overflow: hidden;
+	text-overflow:ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp:2;
+	-webkit-box-orient:vertical;
+}
+
+//flex布局
+@mixin displayFlex(){
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+@mixin flex($flexValue){
+  -webkit-box-flex: $flexValue;
+      -webkit-flex: $flexValue;
+      flex: $flexValue;
+}
+
+@mixin transform($value){
+transform:$value;
+-ms-transform:$value; 	/* IE 9 */
+-moz-transform:$value; 	/* Firefox */
+-webkit-transform:$value; /* Safari 和 Chrome */
+-o-transform:$value; 	/* Opera */
+}
+
+//基础类
+.hide{
+	display: none;
+}
+.show{
+	display: block;
+}
