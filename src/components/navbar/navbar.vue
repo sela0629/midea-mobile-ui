@@ -65,7 +65,12 @@
         font-size: 15px;
         position: relative;
         &:after{
-          @include setLine($border-color,'right');
+          @include setLine($border-color,'left');
+        }
+        &:first-child{
+          &:after{
+            display:none;
+          }
         }
         &_on{
           background: #EAEAEA;

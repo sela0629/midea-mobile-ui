@@ -17,11 +17,12 @@
 	-webkit-transform: scaleY(0.5);
 	transform: scaleY(0.5);
 }@else{
-	right: 0;
+	//用left这样可以使用first-child不显示多余的线，eg navbar tab线
+	left: 0;
     top: 0;
     width: 1px;
     bottom: 0;
-	border-right: 1px solid $color;
+	border-left: 1px solid $color;
 	color: $color;
     -webkit-transform-origin: 100% 0;
     transform-origin: 100% 0;

@@ -38,6 +38,10 @@
           <div class="midea-cell__bd">Button</div>
           <div class="midea-cell__ft"></div>
         </router-link>
+        <router-link  v-on:click.native="hideCategory" to="/dialog" class="midea-cell midea-cell_access">
+          <div class="midea-cell__bd">Dialog</div>
+          <div class="midea-cell__ft"></div>
+        </router-link>
       </div>
 </div>
 
@@ -101,6 +105,10 @@ export default {
       text-align: left;
       font-size: 14px
     }
+
+  }
+  .page.button .page__bd{
+    padding: 0 15px;
   }
 
 </style>
