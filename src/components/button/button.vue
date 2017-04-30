@@ -79,7 +79,6 @@
     &_default{
       color: #000000;
       background-color: #F8F8F8;
-      background: #F7F7F7;
     }
 
     &_disabled{

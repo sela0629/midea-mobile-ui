@@ -10,6 +10,9 @@ import Cell from '@/components/cell/cell'
 import Navbar from '@/components/navbar/navbar'
 import Tabbar from '@/components/tabbar/tabbar'
 import Button from '@/components/button/button'
+import Toast from '@/components/toast/toast'
+import DemoTest from '@/demos/demo_test'
+
 // 0. 如果使用模块化机制编程，導入Vue和VueRouter，要调用 Vue.use(VueRouter)
 Vue.use(Router)
 // const Foo = { template: '<div>foo</div>' }
@@ -27,6 +30,8 @@ export default new Router({
 // 或者，只是一个组件配置对象。
 // 我们晚点再讨论嵌套路由。
   routes: [
+  { path: '/demoTest', component: DemoTest },
+  { path: '/toast', component: Toast },
   { path: '/button', component: Button },
   { path: '/tabbar', component: Tabbar },
   { path: '/navbar', component: Navbar },

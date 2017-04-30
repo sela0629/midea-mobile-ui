@@ -1,36 +1,15 @@
 <template>
-  <!-- S  page -->
-  <div class="page navbar">
-    <!-- <div class="page__hd"> -->
-    
-    <!-- </div> -->
-
-    <!-- S  page__bd -->
-
-    <div class="page__bd">
-      
-
-    </div>
-
-    <!-- E  page__bd -->
-    <!-- E  page -->
+  <div>
+    tpl 模板测试
   </div>
 
 </template>
 
 <script>
   export default {
-    name: 'navbar',
+    name: 'tpl',
     data () {
       return {
-        msg: 'navbar demo',
-        activeIndex: 1
-      }
-    },
-    methods: {
-      switchTab: function (e) {
-        // e.target.dataset.index
-        this.activeIndex = e.target.dataset.index
       }
     }
   }
@@ -38,7 +17,5 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang='scss'>
-  @import "../../common/function";
-  @import "../../common/var";
-  
 </style>
+

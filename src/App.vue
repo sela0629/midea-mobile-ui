@@ -42,6 +42,14 @@
           <div class="midea-cell__bd">Dialog</div>
           <div class="midea-cell__ft"></div>
         </router-link>
+        <router-link  v-on:click.native="hideCategory" to="/toast" class="midea-cell midea-cell_access">
+          <div class="midea-cell__bd">Toast</div>
+          <div class="midea-cell__ft"></div>
+        </router-link>
+         <router-link  v-on:click.native="hideCategory" to="/demoTest" class="midea-cell midea-cell_access">
+          <div class="midea-cell__bd">demoTest</div>
+          <div class="midea-cell__ft"></div>
+        </router-link>
       </div>
 </div>
 
@@ -110,5 +118,13 @@ export default {
   .page.button .page__bd{
     padding: 0 15px;
   }
-
+  .page.dialog {
+    background: #fff;
+  }
+  .dialog,.toast
+  {
+    .page__bd{
+      padding:0 20px;
+    }
+  } 
 </style>

@@ -50,7 +50,7 @@
 </template>
 
 <style lang="scss">
-	@import "../../common/global";
+  @import "../../common/global";
 	.midea-cells{
 		position: relative;
 		line-height: 1.5; 

@@ -66,6 +66,7 @@
         position: relative;
         &:after{
           @include setLine($border-color,'left');
+          left: -1px;
         }
         &:first-child{
           &:after{

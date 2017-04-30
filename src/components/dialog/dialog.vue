@@ -1,14 +1,23 @@
 <template>
   <!-- S  page -->
   <div class="page dialog">
-    <!-- <div class="page__hd"> -->
-    
-    <!-- </div> -->
+    <div class="page__hd">
+      <div class="page__title">Dialog</div>
+    </div>
 
     <!-- S  page__bd -->
 
     <div class="page__bd">
-      <div class="midea-mask"></div>
+
+    <!-- 通用按钮 primary -->
+    <a href="javascript:;" v-on:click="pop(2)" class="midea-btn midea-btn_primary">Dialog样式（两个按钮）</a>
+
+    <!-- 通用按钮 primary -->
+    <a href="javascript:;" v-on:click="pop(1)" class="midea-btn midea-btn_default">Dialog样式（一个按钮）</a>
+
+    <!-- 弹窗，一个页面使用一个弹窗，通过改变弹窗数据实现不同弹窗 -->
+     <div v-bind:class="['js_dialog',isShowDialog ? '':'hide']">
+       <div class="midea-mask"></div>
       <div class="midea-dialog">
         <div class="midea-dialog__hd">
           <strong class="midea-dialog__title">弹窗标题</strong>
@@ -17,12 +26,14 @@
           弹窗内容，告知当前状态、信息和解决方法。根据内容自动拉伸高度
         </div>
         <div class="midea-dialog__ft">
-          <a href="javascript:;" class="midea-dialog__btn midea-dialog__btn_default">
+          <a v-if="btnNum == 2" href="javascript:;" class="midea-dialog__btn midea-dialog__btn_default" v-on:click="hidePop()">
             辅助操作
           </a>
-          <a href="javascript:;" class="midea-dialog__btn midea-dialog__btn_primary">主操作</a>
+          <a href="javascript:;" class="midea-dialog__btn midea-dialog__btn_primary" v-on:click="hidePop()">主操作</a>
         </div>
       </div>
+     </div>
+      
 
     </div>
 
@@ -38,13 +49,18 @@
     data () {
       return {
         msg: 'navbar demo',
-        activeIndex: 1
+        btnNum: 1,
+        isShowDialog: 0
       }
     },
     methods: {
-      switchTab: function (e) {
+      pop: function (value) {
         // e.target.dataset.index
-        this.activeIndex = e.target.dataset.index
+        this.btnNum = value
+        this.isShowDialog = 1
+      },
+      hidePop: function () {
+        this.isShowDialog = 0
       }
     }
   }
@@ -52,8 +68,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang='scss'>
-  @import "../../common/function";
-  @import "../../common/var";
+   @import "../../common/global";
   .midea-mask{
     position: fixed;
     z-index: 1000;
@@ -72,6 +87,7 @@
     max-width: 300px;
     top: 50%;
     left: 50%;
+    border-radius: 5px;
     @include transform(translate(-50%,-50%));
     &__hd{
       padding: 15px 20px 10px 20px; 
