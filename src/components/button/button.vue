@@ -1,58 +1,36 @@
 <template>
-  <!-- S  page -->
-  <div class="page button">
-    <div class="page__hd">
-     <div class="page__title">
-       按钮（Button）
-     </div>
-   </div>
-
-   <!-- S  page__bd -->
-
-   <div class="page__bd">
-    <!-- 通用按钮 primary -->
-    <a href="javascript:;" class="midea-btn midea-btn_primary">主操作按钮（Primary Normal）</a>
-
-    <!-- 通用按钮 loading -->
-    <a href="javascript:;" class="midea-btn midea-btn_primary midea-btn_loading">
-    操作按钮（Loading）</a>
-
-    <!-- 通用按钮 disabled -->
-    <a href="javascript:;" class="midea-btn midea-btn_primary midea-btn_disabled">
-    操作按钮（Disabled）
+ <a href="javascript:;" class="midea-btn midea-btn_primary" v-bind:class="['midea-btn',
+    'midea-btn_'+type,mode==''?'':'midea-btn_'+mode
+    ]">{{text}}
+    <slot></slot>
     </a>
-
-    <!-- 次操作按钮 default -->
-    <a href="javascript:;" class="midea-btn midea-btn_default">次操作按钮（Default Normal）</a>
-
-    <!-- 次操作按钮 loading -->
-    <a href="javascript:;" class="midea-btn midea-btn_default midea-btn_loading">次操作按钮（Loading）</a>
-
-    <!-- 次操作按钮 disabled -->
-    <a href="javascript:;" class="midea-btn midea-btn_default midea-btn_disabled">次操作按钮（Disabled）</a>
-
-  </div>
-
-  <!-- E  page__bd -->
-  <!-- E  page -->
-</div>
-
 </template>
 
 <script>
   export default {
-    name: 'navbar',
+    name: 'button',
     data () {
       return {
-        msg: 'navbar demo',
-        activeIndex: 1
+      }
+    },
+    props: {
+      // default primary
+      type: {
+        required: false,
+        default: 'default'
+      },
+      // loading disabled
+      mode: {
+        required: false,
+        default: ''
+      },
+      // loading disabled
+      text: {
+        type: String,
+        default: ''
       }
     },
     methods: {
-      switchTab: function (e) {
-        // e.target.dataset.index
-        this.activeIndex = e.target.dataset.index
-      }
     }
   }
 </script>

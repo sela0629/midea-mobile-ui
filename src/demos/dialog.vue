@@ -14,9 +14,10 @@
 
     <!-- 通用按钮 primary -->
     <a href="javascript:;" v-on:click="popOneButtonDialog2" class="midea-btn midea-btn_default">Dialog样式（一个按钮）</a>
-
+    
+    <!-- S 弹窗模板 -->
     <dialogTpl :arrButton="dialog.arrButton" :title="dialog.title" :tip="dialog.tip" :isShowDialog="dialog.isShowDialog" @hidePop="change(0)" ></dialogTpl>
-      
+    <!-- E 弹窗模板 -->  
 
     </div>
 

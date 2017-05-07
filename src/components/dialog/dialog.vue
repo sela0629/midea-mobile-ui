@@ -24,9 +24,6 @@
     name: 'dialogTpl',
     data () {
       return {
-        msg: 'navbar demo'
-        // btnNum: 1,
-        // isShowDialog: 0
       }
     },
     props: [

@@ -9,7 +9,7 @@ import Header from '@/components/header/header'
 import Cell from '@/components/cell/cell'
 import Navbar from '@/components/navbar/navbar'
 import Tabbar from '@/components/tabbar/tabbar'
-import Button from '@/components/button/button'
+import Button from '@/demos/button'
 import Toast from '@/components/toast/toast'
 import DemoTest from '@/demos/demo_test'
 
