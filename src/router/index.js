@@ -4,7 +4,7 @@ import Router from 'vue-router'
 // 可以从其他文件 import 进来
 import Hello from '@/components/Hello'
 import Sela from '@/components/Sela'
-import Dialog from '@/components/dialog/dialog'
+import Dialog from '@/demos/dialog'
 import Header from '@/components/header/header'
 import Cell from '@/components/cell/cell'
 import Navbar from '@/components/navbar/navbar'

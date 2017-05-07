@@ -1,66 +1,46 @@
 <template>
-  <!-- S  page -->
-  <div class="page dialog">
-    <div class="page__hd">
-      <div class="page__title">Dialog</div>
-    </div>
-
-    <!-- S  page__bd -->
-
-    <div class="page__bd">
-
-    <!-- 通用按钮 primary -->
-    <a href="javascript:;" v-on:click="pop(2)" class="midea-btn midea-btn_primary">Dialog样式（两个按钮）</a>
-
-    <!-- 通用按钮 primary -->
-    <a href="javascript:;" v-on:click="pop(1)" class="midea-btn midea-btn_default">Dialog样式（一个按钮）</a>
-
-    <!-- 弹窗，一个页面使用一个弹窗，通过改变弹窗数据实现不同弹窗 -->
+  <!-- 弹窗，一个页面使用一个弹窗，通过改变弹窗数据实现不同弹窗 -->
      <div v-bind:class="['js_dialog',isShowDialog ? '':'hide']">
        <div class="midea-mask"></div>
       <div class="midea-dialog">
         <div class="midea-dialog__hd">
-          <strong class="midea-dialog__title">弹窗标题</strong>
+          <strong class="midea-dialog__title">{{title}}</strong>
         </div>
         <div class="midea-dialog__bd">
-          弹窗内容，告知当前状态、信息和解决方法。根据内容自动拉伸高度
+          {{tip}}
         </div>
         <div class="midea-dialog__ft">
-          <a v-if="btnNum == 2" href="javascript:;" class="midea-dialog__btn midea-dialog__btn_default" v-on:click="hidePop()">
-            辅助操作
+          <a v-for="item in arrButton" href="javascript:;" v-bind:class="['midea-dialog__btn','midea-dialog__btn_'+item.class]" @click="item.onClick">
+           {{item.name}}
           </a>
-          <a href="javascript:;" class="midea-dialog__btn midea-dialog__btn_primary" v-on:click="hidePop()">主操作</a>
         </div>
       </div>
      </div>
-      
-
-    </div>
-
-    <!-- E  page__bd -->
-    <!-- E  page -->
-  </div>
 
 </template>
 
 <script>
   export default {
-    name: 'navbar',
+    name: 'dialogTpl',
     data () {
       return {
-        msg: 'navbar demo',
-        btnNum: 1,
-        isShowDialog: 0
+        msg: 'navbar demo'
+        // btnNum: 1,
+        // isShowDialog: 0
       }
     },
+    props: [
+      'isShowDialog',
+      'tip',
+      'title',
+      'arrButton'
+    ],
     methods: {
-      pop: function (value) {
-        // e.target.dataset.index
-        this.btnNum = value
-        this.isShowDialog = 1
-      },
       hidePop: function () {
-        this.isShowDialog = 0
+        console.log('子組件')
+        this.$emit('hidePop', 'ggg')
+        console.dir(this.arrButton)
+        // this.isShowDialog = 0
       }
     }
   }
