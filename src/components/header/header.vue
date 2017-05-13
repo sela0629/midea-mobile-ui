@@ -38,7 +38,7 @@
          required: false,
          default: ''
        },
-      // fix 是否固定在顶部
+      // back 是否有返回图标
        backMode: {
          required: false,
          default: ''
