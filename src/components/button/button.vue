@@ -1,5 +1,5 @@
 <template>
- <a href="javascript:;" class="midea-btn midea-btn_primary" v-bind:class="['midea-btn',
+ <a href="javascript:;" v-bind:class="['midea-btn',
     'midea-btn_'+type,mode==''?'':'midea-btn_'+mode
     ]">{{text}}
     <slot></slot>

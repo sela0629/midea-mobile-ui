@@ -1,71 +1,82 @@
 <template>
-<!-- S  page -->
-  <div class="page header">
-    <div class="page__hd">
-    <header class="midea-header midea-header_fixed">
-     <div class="midea-header__hd"></div> 
-     <div class="midea-header__bd">固定在顶部</div> 
-     <div class="midea-header__ft"></div>
+<header v-if="headerMode == 'diy'"
+  v-bind:class="['midea-header',posMode?'midea-header_'+posMode:'',backMode?'midea-header_'+backMode:'']">
+     <div class="midea-header__hd" @click="left.onClick" v-html="left.html"></div> 
+     <div class="midea-header__bd">{{title}} <slot></slot></div> 
+     <div class="midea-header__ft" @click="right.onClick" v-html="right.html"></div>
+
    </header>
-    </div>
+<header v-else
+  v-bind:class="['midea-header',posMode?'midea-header_'+posMode:'',backMode?'midea-header_'+backMode:'']">
+     <div class="midea-header__hd" @click="back">{{backContent}}</div> 
+     <div class="midea-header__bd">{{title}} <slot></slot></div> 
+     <div class="midea-header__ft" @click="right.onClick">{{right.name}}</div>
 
-   <!-- S  page__bd -->
-
-   <!-- 普通样式，不含<图标；含<图标加个修饰符 midea-header_back(默认没有返回图标) 应该加在头部 -->
-   <div class="page__bd">
-
-     <header class="midea-header">
-     <div class="midea-header__hd">返回</div> 
-     <div class="midea-header__bd">标题过长会隐藏后面内容，标题过长会隐藏后面内容，标题过长会隐藏后面内容，标题过长会隐藏后面内容，标题过长会隐藏后面内容，</div> 
-     <div class="midea-header__ft"></div>
    </header>
-   
-    <!-- 有返回图标样式 -->
-    <header class="midea-header midea-header_back">
-     <div class="midea-header__hd">返回</div> 
-     <div class="midea-header__bd">标题过长会隐藏后面内容，标题过长会隐藏后面内容，标题过长会隐藏后面内容，标题过长会隐藏后面内容，标题过长会隐藏后面内容，</div> 
-     <div class="midea-header__ft"></div>
-   </header>
-
-    <!-- 有返回图标样式+ft 编辑按钮 -->
-    <header class="midea-header midea-header_back">
-     <div class="midea-header__hd">返回</div> 
-     <div class="midea-header__bd">标题过长会隐藏后面内容，标题过长会隐藏后面内容，标题过长会隐藏后面内容，标题过长会隐藏后面内容，标题过长会隐藏后面内容，</div> 
-     <div class="midea-header__ft">编辑</div>
-   </header>
-
-   <!-- 左侧无文字,仅图标+ft 编辑按钮 -->
-    <header class="midea-header midea-header_back">
-     <div class="midea-header__hd"></div> 
-     <div class="midea-header__bd">左侧无文字,仅图标</div> 
-     <div class="midea-header__ft">编辑</div>
-   </header>
-
-   <!-- 左侧无文字,无图标+ft 编辑按钮 -->
-    <header class="midea-header">
-     <div class="midea-header__hd"></div> 
-     <div class="midea-header__bd">左侧无文字,仅图标</div> 
-     <div class="midea-header__ft">编辑</div>
-   </header>
-
-   </div>
-
-   <!-- E  page__bd -->
-
-   </div>
-
-   <!-- E  page -->
 </template>
 
 <script>
-  export default {
-    name: 'header',
-    data () {
-      return {
-        msg: 'header demo'
-      }
-    }
-  }
+   export default {
+     name: 'header',
+     data () {
+       return {
+       }
+     },
+     props: {
+      // diy 自定义左侧和右侧内容
+       headerMode: {
+         required: false,
+         default: ''
+       },
+      // backContent 左侧返回内容文字
+       backContent: {
+         required: false,
+         default: ''
+       },
+      // fix 是否固定在顶部
+       posMode: {
+         required: false,
+         default: ''
+       },
+      // fix 是否固定在顶部
+       backMode: {
+         required: false,
+         default: ''
+       },
+      // loading disabled
+       title: {
+         type: String,
+         default: ''
+       },
+       left: {
+         required: false,
+         default: function () {
+           return {
+             name: '',
+             html: '',
+             onClick () {
+             }
+           }
+         }
+       },
+       right: {
+         required: false,
+         default: function () {
+           return {
+             name: '',
+             html: '',
+             onClick () {
+             }
+           }
+         }
+       }
+     },
+     methods: {
+         back: function () {
+           window.history.back()
+         }
+     }
+   }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

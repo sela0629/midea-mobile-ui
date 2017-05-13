@@ -20,35 +20,35 @@
       <div class="midea-cells">
          <router-link  v-on:click.native="hideCategory" to="/header" class="midea-cell midea-cell_access">
           <div class="midea-cell__bd">Header</div>
-          <div class="midea-cell__ft"></div>
+          <div class="midea-cell__ft">头部</div>
         </router-link>
          <router-link  v-on:click.native="hideCategory" to="/cell" class="midea-cell midea-cell_access">
           <div class="midea-cell__bd">Cell</div>
-          <div class="midea-cell__ft"></div>
+          <div class="midea-cell__ft">单元</div>
         </router-link>
          <router-link  v-on:click.native="hideCategory" to="/navbar" class="midea-cell midea-cell_access">
           <div class="midea-cell__bd">Navbar</div>
-          <div class="midea-cell__ft"></div>
+          <div class="midea-cell__ft">导航</div>
         </router-link>
          <router-link  v-on:click.native="hideCategory" to="/tabbar" class="midea-cell midea-cell_access">
           <div class="midea-cell__bd">Tabbar</div>
-          <div class="midea-cell__ft"></div>
+          <div class="midea-cell__ft">底部导航</div>
         </router-link>
          <router-link  v-on:click.native="hideCategory" to="/button" class="midea-cell midea-cell_access">
           <div class="midea-cell__bd">Button</div>
-          <div class="midea-cell__ft"></div>
+          <div class="midea-cell__ft">按钮</div>
         </router-link>
         <router-link  v-on:click.native="hideCategory" to="/dialog" class="midea-cell midea-cell_access">
           <div class="midea-cell__bd">Dialog</div>
-          <div class="midea-cell__ft"></div>
+          <div class="midea-cell__ft">弹窗</div>
         </router-link>
         <router-link  v-on:click.native="hideCategory" to="/toast" class="midea-cell midea-cell_access">
           <div class="midea-cell__bd">Toast</div>
-          <div class="midea-cell__ft"></div>
+          <div class="midea-cell__ft">提示弹窗</div>
         </router-link>
          <router-link  v-on:click.native="hideCategory" to="/demoTest" class="midea-cell midea-cell_access">
           <div class="midea-cell__bd">demoTest</div>
-          <div class="midea-cell__ft"></div>
+          <div class="midea-cell__ft">例子</div>
         </router-link>
       </div>
 </div>
