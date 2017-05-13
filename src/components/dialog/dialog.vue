@@ -26,12 +26,39 @@
       return {
       }
     },
-    props: [
-      'isShowDialog',
-      'tip',
-      'title',
-      'arrButton'
-    ],
+    props: {
+      isShowDialog: {
+         required: false,
+         default: 0
+       },
+       tip: {
+         required: false,
+         default: ''
+       },
+       title: {
+         required: false,
+         default: ''
+       },
+       arrButton: {
+         required: false,
+         default: function () {
+           return [
+          {
+            name: '',
+            class: 'default', // default primary
+            onClick () {
+            }
+          }
+        ]
+         }
+       }
+    },
+    // props: [
+    //   'isShowDialog',
+    //   'tip',
+    //   'title',
+    //   'arrButton'
+    // ],
     methods: {
       hidePop: function () {
         console.log('子組件')
