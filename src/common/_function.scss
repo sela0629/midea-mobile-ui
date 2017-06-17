@@ -29,7 +29,7 @@
     -webkit-transform: scaleX(0.5);
     transform: scaleX(0.5);
 }
-	
+
 }
 
 //横竖折角(7) 用于列表返回图标和access标（>）(6px, #C8C8CD, 2px);
@@ -40,7 +40,7 @@
 	border-width: $borderWidth $borderWidth 0 0;
 	border-color: $color;
 	border-style: solid;
-	//旋转 46deg 
+	//旋转 46deg
 	// -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
 	// transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
 	//默认位置 垂直居中
@@ -53,7 +53,7 @@
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-//超出... 
+//超出...
 //超出一行...
 @mixin textOneLine(){
 	white-space: nowrap;
@@ -99,8 +99,8 @@ transform:$value;
 
 
 @mixin keyframes($animationName) {
-	@-webkit-keyframes #{$animationName} { @content; } 
-	@-moz-keyframes #{$animationName} { @content; } 
-	@-o-keyframes #{$animationName} { @content; } 
-	@keyframes #{$animationName} { @content; } 
+	@-webkit-keyframes #{$animationName} { @content; }
+	@-moz-keyframes #{$animationName} { @content; }
+	@-o-keyframes #{$animationName} { @content; }
+	@keyframes #{$animationName} { @content; }
 }

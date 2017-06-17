@@ -18,6 +18,6 @@ a img {
 }
 
 a {
-    text-decoration: none; 
+    text-decoration: none;
     @include setTapColor();
 }

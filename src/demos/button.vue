@@ -15,12 +15,12 @@
     <buttonTpl type="default">次操作按钮（Default Normal）</buttonTpl>
     <buttonTpl type="default" mode="disabled">次操作按钮（Disabled）</buttonTpl>
     <buttonTpl type="default" mode="loading">次操作按钮（Loading）</buttonTpl>
-    <!-- E 按钮模板 -->  
+    <!-- E 按钮模板 -->
 
     </div>
 
     <!-- E  page__bd -->
-    
+
   </div>
 <!-- E  page -->
 </template>
@@ -38,4 +38,3 @@
     }
   }
 </script>
-

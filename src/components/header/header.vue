@@ -1,15 +1,15 @@
 <template>
 <header v-if="headerMode == 'diy'"
   v-bind:class="['midea-header',posMode?'midea-header_'+posMode:'',backMode?'midea-header_'+backMode:'']">
-     <div class="midea-header__hd" @click="left.onClick" v-html="left.html"></div> 
-     <div class="midea-header__bd">{{title}} <slot></slot></div> 
+     <div class="midea-header__hd" @click="left.onClick" v-html="left.html"></div>
+     <div class="midea-header__bd">{{title}} <slot></slot></div>
      <div class="midea-header__ft" @click="right.onClick" v-html="right.html"></div>
 
    </header>
 <header v-else
   v-bind:class="['midea-header',posMode?'midea-header_'+posMode:'',backMode?'midea-header_'+backMode:'']">
-     <div class="midea-header__hd" @click="back">{{backContent}}</div> 
-     <div class="midea-header__bd">{{title}} <slot></slot></div> 
+     <div class="midea-header__hd" @click="back">{{backContent}}</div>
+     <div class="midea-header__bd">{{title}} <slot></slot></div>
      <div class="midea-header__ft" @click="right.onClick">{{right.name}}</div>
 
    </header>
@@ -45,7 +45,7 @@
        },
       // loading disabled
        title: {
-         type: String,
+         type: String, 
          default: ''
        },
        left: {
@@ -121,7 +121,7 @@
     top: 0;
     right: 0;
     left: 0;
-    z-index: 1; 
+    z-index: 1;
   }
   /* 有返回图标 */
   .midea-header_back{
@@ -129,7 +129,7 @@
       position: relative;
       /* < */
       &:before{
-      content: ''; 
+      content: '';
       @include setArrow(6px,$midea-blue,2px);
       transform: rotate(-138deg);
       margin-right: 5px;
