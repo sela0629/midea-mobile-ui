@@ -5,7 +5,7 @@
   @import "../../common/global";
 	.midea-cells{
 		position: relative;
-		line-height: 1.5; 
+		line-height: 1.5;
 		font-size: 17px;
 		background: #fff;
 		&__title{
@@ -14,7 +14,7 @@
 			padding-left: 15px;
 			padding-right: 15px;
 			color: #999;
-			font-size: 14px;
+			font-size: 14px; 
 		}
 		&:before {
 			@include setLine($cell-line-color);
@@ -35,7 +35,7 @@
 		-webkit-box-align: center;
 		-webkit-align-items: center;
 		align-items: center;
-		
+
 		&:before {
 			@include setLine($cell-line-color);
 			left: 15px
@@ -57,7 +57,7 @@
 	}
 
 	.midea-cell_access{
-		
+
 		color: inherit;
 		.midea-cell__ft{
 			padding-right: 13px;
@@ -72,7 +72,7 @@
 				right: 2px;
 			}
 		}
-		
+
 	}
 
 </style>

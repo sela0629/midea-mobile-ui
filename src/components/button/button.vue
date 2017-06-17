@@ -52,7 +52,7 @@
     color: #fff;
     position: relative;
     &_primary{
-      background-color: $midea-blue; 
+      background-color: $midea-blue;
     }
     &_default{
       color: #000000;
